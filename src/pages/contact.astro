@@ -3,46 +3,197 @@ import MainLayout from '../layouts/MainLayout.astro';
 ---
 
 <MainLayout>
-  <h1 class="text-4xl font-bold mb-6">Contact Us</h1>
+  <style>
+    /* Contact page NISETA styles */
+    .contact-hero {
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background-color: #000;
+    }
+    .contact-hero h1 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 6vw;
+      margin: 0;
+      line-height: 1;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .contact-hero h1 span {
+      color: #E30613;
+    }
+    .contact-card {
+      border-top: 3px solid #E30613;
+      background: #fff;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    .contact-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(227, 6, 19, 0.1);
+    }
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background-color: #E30613;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 1.5rem;
+    }
+    .contact-email-link {
+      color: #E30613;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .contact-email-link:hover {
+      text-decoration: underline;
+    }
+    .commitment-icon {
+      color: #E30613;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    @media (max-width: 768px) {
+      .contact-hero h1 {
+        font-size: 10vw;
+      }
+    }
+  </style>
 
-  <div class="grid md:grid-cols-2 gap-12 max-w-4xl">
-    <div>
-      <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+  <!-- Hero -->
+  <section class="contact-hero">
+    <div class="max-w-6xl mx-auto px-4 relative z-10">
+      <h1>Let's <span>connect</span> and create momentum</h1>
+    </div>
+  </section>
+
+  <!-- Intro + Contact Cards -->
+  <div class="max-w-6xl mx-auto px-4 py-20">
+    <p class="text-xl text-center max-w-3xl mx-auto mb-16">
+      At NISETA, we value clear communication and reliable support. Whether you're a manufacturer, importer, wholesaler, trader, or simply interested in our services, our team is here to listen and respond.
+    </p>
+
+    <!-- Contact Cards -->
+    <div class="grid md:grid-cols-3 gap-10 mb-20">
+      <div class="contact-card p-8">
+        <div class="contact-icon mb-5">HQ</div>
+        <h3 class="text-2xl mb-4" style="font-family: 'Archivo Black', sans-serif;">Head Office</h3>
+        <p class="text-gray-700">NISETA operates globally with headquarters in India.</p>
+      </div>
+      <div class="contact-card p-8">
+        <div class="contact-icon mb-5">@</div>
+        <h3 class="text-2xl mb-4" style="font-family: 'Archivo Black', sans-serif;">Email</h3>
+        <p class="text-gray-700 mb-1">For general inquiries:</p>
+        <p><a href="mailto:support@niseta.com" class="contact-email-link">support@niseta.com</a></p>
+        <p class="text-gray-700 mt-3 mb-1">For team collaborations:</p>
+        <p><a href="mailto:team@niseta.com" class="contact-email-link">team@niseta.com</a></p>
+      </div>
+      <div class="contact-card p-8">
+        <div class="contact-icon mb-5">&#x23F0;</div>
+        <h3 class="text-2xl mb-4" style="font-family: 'Archivo Black', sans-serif;">Business Hours</h3>
+        <p class="text-gray-700">Monday – Friday: 9:00 AM – 6:00 PM</p>
+        <p class="text-gray-700 mt-2">Saturday – Sunday: Closed</p>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="max-w-2xl mx-auto mb-20">
+      <h2 class="text-3xl text-center mb-8" style="font-family: 'Archivo Black', sans-serif;">Send Us a Message</h2>
+      <form action="https://api.web3forms.com/submit" method="POST" class="space-y-5">
         <input type="hidden" name="access_key" value="6dc5917c-d4a7-4516-88ec-89a4bff8d6b0">
+        <input type="hidden" name="subject" value="New Contact Form Submission from NISETA">
+        <input type="hidden" name="from_name" value="NISETA Website">
         
-        <div>
-          <label class="block text-sm font-medium mb-1">Name</label>
-          <input type="text" name="name" required class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-        </div>
-        
-        <div>
-          <label class="block text-sm font-medium mb-1">Email</label>
-          <input type="email" name="email" required class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-        </div>
-        
-        <div>
-          <label class="block text-sm font-medium mb-1">Message</label>
-          <textarea name="message" rows="4" required class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        <div class="grid md:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-sm font-semibold mb-1">First Name *</label>
+            <input type="text" name="first_name" required class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#E30613] focus:border-transparent transition">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-1">Last Name *</label>
+            <input type="text" name="last_name" required class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#E30613] focus:border-transparent transition">
+          </div>
         </div>
 
-        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+        <div>
+          <label class="block text-sm font-semibold mb-1">Email *</label>
+          <input type="email" name="email" required class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#E30613] focus:border-transparent transition">
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-1">Company (optional)</label>
+          <input type="text" name="company" class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#E30613] focus:border-transparent transition">
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-1">Message *</label>
+          <textarea name="message" rows="5" required class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#E30613] focus:border-transparent transition"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-[#E30613] text-white font-bold py-4 px-8 rounded hover:bg-[#c00510] transition text-lg uppercase tracking-wider" style="font-family: 'Archivo Black', sans-serif;">
           Send Message
         </button>
       </form>
     </div>
 
-    <div class="space-y-4 text-gray-700">
-      <div>
-        <h3 class="font-semibold">📧 Email</h3>
-        <p>contact@yourcompany.com</p>
+    <!-- Map -->
+    <div class="mb-20">
+      <h2 class="text-3xl text-center mb-8" style="font-family: 'Archivo Black', sans-serif;">Our Location</h2>
+      <div class="rounded overflow-hidden shadow-lg">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.89796791254!2d77.06889969218755!3d28.52751966789552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sDelhi!5e0!3m2!1sen!2sin!4v1700000000000" 
+          width="100%" 
+          height="400" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          title="NISETA Office Location - New Delhi">
+        </iframe>
       </div>
-      <div>
-        <h3 class="font-semibold">📞 Phone</h3>
-        <p>+91 98765 43210</p>
-      </div>
-      <div>
-        <h3 class="font-semibold">📍 Address</h3>
-        <p>Your Business Address, City, State - PIN</p>
+    </div>
+
+    <!-- Commitment Section -->
+    <div class="bg-white py-16">
+      <h2 class="text-3xl text-center mb-12 uppercase" style="font-family: 'Archivo Black', sans-serif;">Our Commitment to You</h2>
+      
+      <div class="max-w-3xl mx-auto space-y-8">
+        <div class="flex items-start gap-5">
+          <span class="commitment-icon text-2xl">&#x2713;</span>
+          <div>
+            <h4 class="text-xl mb-2" style="font-family: 'Archivo Black', sans-serif;">Timely Responses</h4>
+            <p class="text-gray-700 leading-relaxed">A professional response within 1–2 business days, because your time matters.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start gap-5">
+          <span class="commitment-icon text-2xl">&#x2713;</span>
+          <div>
+            <h4 class="text-xl mb-2" style="font-family: 'Archivo Black', sans-serif;">Transparent Communication</h4>
+            <p class="text-gray-700 leading-relaxed">No hidden agendas, just clear and honest dialogue about opportunities.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start gap-5">
+          <span class="commitment-icon text-2xl">&#x2713;</span>
+          <div>
+            <h4 class="text-xl mb-2" style="font-family: 'Archivo Black', sans-serif;">Focused Solutions</h4>
+            <p class="text-gray-700 leading-relaxed">We prioritize understanding and efficiently addressing your specific needs.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start gap-5">
+          <span class="commitment-icon text-2xl">&#x2713;</span>
+          <div>
+            <h4 class="text-xl mb-2" style="font-family: 'Archivo Black', sans-serif;">Confidentiality Assured</h4>
+            <p class="text-gray-700 leading-relaxed">Your inquiries and information are handled with the utmost discretion.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
