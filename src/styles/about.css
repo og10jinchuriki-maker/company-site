@@ -1,0 +1,100 @@
+/* About page specific styles */
+.hero-bg {
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+    animation: pulse 8s infinite alternate;
+}
+
+.section-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.section-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-section-title {
+    font-family: 'Archivo Black', sans-serif;
+}
+
+.about-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50%;
+    height: 4px;
+    background-color: #E30613;
+    animation: underlineGrow 1.2s ease-out forwards;
+}
+
+.mission-statement {
+    font-style: italic;
+    border-left: 3px solid #E30613;
+    transition: all 0.4s ease;
+}
+
+.mission-statement:hover {
+    transform: translateX(10px);
+}
+
+.about-card {
+    border: 1px solid #aaa;
+    transition: all 0.3s ease;
+}
+
+.about-card:hover {
+    border-color: #E30613;
+    transform: translateY(-5px) scale(1.02);
+}
+
+.partner-list li {
+    transition: all 0.3s ease;
+}
+
+.partner-list li:hover {
+    transform: translateX(5px);
+}
+
+.partner-list li::before {
+    content: '→';
+    color: #E30613;
+    transition: all 0.3s ease;
+}
+
+.partner-list li:hover::before {
+    transform: translateX(3px);
+}
+
+.edge-item {
+    background-color: #000;
+    color: #fff;
+    transition: all 0.4s ease;
+}
+
+.edge-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.future-text {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.02); }
+}
+
+@keyframes underlineGrow {
+    0% { width: 0%; }
+    100% { width: 50%; }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}

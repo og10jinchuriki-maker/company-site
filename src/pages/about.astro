@@ -3,25 +3,104 @@ import MainLayout from '../layouts/MainLayout.astro';
 ---
 
 <MainLayout>
-  <h1 class="text-4xl font-bold mb-6">About Us</h1>
-  
-  <section class="max-w-3xl">
-    <p class="text-lg text-gray-700 mb-6">
-      We are a passionate team dedicated to delivering exceptional solutions. 
-      Founded in 2024, our mission is to help businesses thrive through technology and innovation.
-    </p>
+  <!-- Custom CSS just for this page -->
+  <style>
+    @import '../styles/about.css';
+  </style>
 
-    <h2 class="text-2xl font-semibold mt-10 mb-4">Our Mission</h2>
-    <p class="text-gray-700 mb-6">
-      To empower businesses with reliable, scalable, and efficient solutions that drive real results.
-    </p>
-
-    <h2 class="text-2xl font-semibold mt-10 mb-4">Our Values</h2>
-    <ul class="space-y-3 text-gray-700">
-      <li>✅ <strong>Integrity</strong> - We do what's right, always.</li>
-      <li>✅ <strong>Excellence</strong> - We strive for the highest quality.</li>
-      <li>✅ <strong>Innovation</strong> - We embrace new ideas and technology.</li>
-      <li>✅ <strong>Customer First</strong> - Your success is our priority.</li>
-    </ul>
+  <!-- Hero Section -->
+  <section class="hero-section relative h-screen flex items-center overflow-hidden">
+    <div class="hero-bg absolute inset-0 bg-[#E30613]"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-4">
+      <h1 class="text-white uppercase leading-[0.9] text-[8vw] md:text-[6vw]" style="font-family: 'Archivo Black', sans-serif;">
+        We move products at the speed of commerce
+      </h1>
+    </div>
   </section>
+
+  <!-- Who We Are -->
+  <div class="max-w-6xl mx-auto px-4">
+    <section class="section-animate py-24">
+      <h2 class="about-section-title text-5xl mb-8 relative inline-block" style="font-family: 'Archivo Black', sans-serif;">Who We Are</h2>
+      <p class="text-lg text-gray-700 mb-6 max-w-4xl">NISETA drives the swift commercialization and scalable growth of promising products across leading marketplaces. We specialize in sourcing inventory rapidly and executing with international precision, enabling businesses to achieve faster market entry and stronger sales impact.</p>
+      
+      <div class="mission-statement text-2xl my-12 pl-8 max-w-3xl">
+        Our mission is simple yet powerful: to empower manufacturers, importers, wholesalers, and traders by providing them with the speed, reach, and execution excellence needed to succeed in today's competitive digital marketplace.
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8 mt-12">
+        <div class="about-card p-8">
+          <h3 class="text-[#E30613] mb-4 text-xl" style="font-family: 'Archivo Black', sans-serif;">Why We Exist</h3>
+          <p class="text-gray-700">Global commerce moves fast, and opportunities don't wait. NISETA was founded to bridge the gap between product creators and high-performing digital marketplaces. By combining agile execution with a strong distribution network, we ensure that great products get the visibility and sales momentum they deserve.</p>
+        </div>
+        <div class="about-card p-8">
+          <h3 class="text-[#E30613] mb-4 text-xl" style="font-family: 'Archivo Black', sans-serif;">Our Network</h3>
+          <p class="text-gray-700">NISETA's strength lies in its strong marketplace presence and robust business relationships. We leverage an international outlook with localized execution, ensuring that our partners benefit from both global standards and local efficiency.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Who We Work With -->
+    <section class="section-animate py-24">
+      <h2 class="about-section-title text-5xl mb-8 relative inline-block" style="font-family: 'Archivo Black', sans-serif;">Who We Work With</h2>
+      <p class="text-lg text-gray-700 mb-6">We partner with:</p>
+      
+      <ul class="partner-list list-none p-0 my-8 md:columns-2 space-y-4">
+        <li class="pl-6 relative break-inside-avoid">Manufacturers seeking rapid product rollout</li>
+        <li class="pl-6 relative break-inside-avoid">Importers looking for a reliable distribution engine</li>
+        <li class="pl-6 relative break-inside-avoid">Wholesalers & Traders who need scalable market access</li>
+        <li class="pl-6 relative break-inside-avoid">Brands wanting marketplace acceleration</li>
+        <li class="pl-6 relative break-inside-avoid">Suppliers needing extended distribution</li>
+        <li class="pl-6 relative break-inside-avoid">Producers requiring international reach</li>
+      </ul>
+      
+      <p class="text-gray-700 mt-6">Our approach is built on trust, transparency, and consistency, making us a dependable partner in growth.</p>
+    </section>
+    
+    <!-- Our Edge -->
+    <section class="section-animate py-24">
+      <h2 class="about-section-title text-5xl mb-8 relative inline-block" style="font-family: 'Archivo Black', sans-serif;">Our Edge</h2>
+      
+      <div class="grid md:grid-cols-4 gap-4 mt-12">
+        <div class="edge-item p-6 text-center">
+          <h3 class="text-[#E30613] mb-2 text-lg" style="font-family: 'Archivo Black', sans-serif;">Speed</h3>
+          <p class="text-sm">We move faster than traditional distributors, turning opportunities into sales before competitors react.</p>
+        </div>
+        <div class="edge-item p-6 text-center">
+          <h3 class="text-[#E30613] mb-2 text-lg" style="font-family: 'Archivo Black', sans-serif;">Scale</h3>
+          <p class="text-sm">Our systems and networks are engineered for exponential growth without compromising quality.</p>
+        </div>
+        <div class="edge-item p-6 text-center">
+          <h3 class="text-[#E30613] mb-2 text-lg" style="font-family: 'Archivo Black', sans-serif;">Reliability</h3>
+          <p class="text-sm">We prioritize stable, long-term relationships over short-term gains.</p>
+        </div>
+        <div class="edge-item p-6 text-center">
+          <h3 class="text-[#E30613] mb-2 text-lg" style="font-family: 'Archivo Black', sans-serif;">Precision</h3>
+          <p class="text-sm">International-standard operations with military-grade execution precision.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Future Section -->
+  <section class="bg-black text-white py-24 mt-12">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <p class="future-text text-3xl md:text-4xl">
+        The future belongs to those who <span class="text-[#E30613]" style="font-family: 'Archivo Black', sans-serif;">move</span> first, <span class="text-[#E30613]" style="font-family: 'Archivo Black', sans-serif;">execute</span> flawlessly, and <span class="text-[#E30613]" style="font-family: 'Archivo Black', sans-serif;">scale</span> without limits. NISETA is your propulsion system.
+      </p>
+    </div>
+  </section>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const sections = document.querySelectorAll('.section-animate');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+  </script>
 </MainLayout>
