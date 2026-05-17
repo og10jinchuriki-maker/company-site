@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Name</title>
+    <meta name="description" content="Your company description" />
+  </head>
+  <body class="bg-white text-gray-900">
+    <header class="border-b">
+      <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="/" class="text-xl font-bold">LOGO</a>
+        <div class="hidden md:flex gap-6">
+          <a href="/" class="hover:text-blue-600">Home</a>
+          <a href="/about" class="hover:text-blue-600">About</a>
+          <a href="/contact" class="hover:text-blue-600">Contact</a>
+        </div>
+        <button id="menu-btn" class="md:hidden text-2xl cursor-pointer">Menu</button>
+      </nav>
+      <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 flex flex-col gap-2">
+        <a href="/" class="hover:text-blue-600">Home</a>
+        <a href="/about" class="hover:text-blue-600">About</a>
+        <a href="/contact" class="hover:text-blue-600">Contact</a>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+      <slot />
+    </main>
+
+    <footer class="border-t mt-12">
+      <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-gray-500 flex flex-wrap gap-4 justify-between">
+        <p>&copy; 2026 Company Name. All rights reserved.</p>
+        <div class="flex gap-4">
+          <a href="/privacy" class="hover:text-blue-600">Privacy Policy</a>
+          <a href="/terms" class="hover:text-blue-600">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('menu-btn').addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>
