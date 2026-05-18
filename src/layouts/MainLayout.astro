@@ -1,47 +1,40 @@
 ---
 import '../styles/global.css';
+import Footer from '../components/Footer.astro';
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Company Name</title>
-    <meta name="description" content="Your company description" />
+    <title>NISETA - Next-Gen Product Distribution</title>
+    <meta name="description" content="NISETA is a next-gen product distribution company built for speed, precision, and global scale." />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   </head>
   <body class="bg-white text-gray-900">
     <header class="border-b">
       <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="/" class="text-xl font-bold">LOGO</a>
+        <a href="/" class="text-xl font-bold text-[#E30613]" style="font-family: 'Archivo Black', sans-serif;">NISETA</a>
         <div class="hidden md:flex gap-6">
-          <a href="/" class="hover:text-blue-600">Home</a>
-          <a href="/about" class="hover:text-blue-600">About</a>
-          <a href="/contact" class="hover:text-blue-600">Contact</a>
+          <a href="/" class="hover:text-[#E30613] transition-colors duration-200">Home</a>
+          <a href="/about" class="hover:text-[#E30613] transition-colors duration-200">About</a>
+          <a href="/contact" class="hover:text-[#E30613] transition-colors duration-200">Contact</a>
         </div>
-        <button id="menu-btn" class="md:hidden text-2xl cursor-pointer">Menu</button>
+        <button id="menu-btn" class="md:hidden text-2xl cursor-pointer">&#9776;</button>
       </nav>
       <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 flex flex-col gap-2">
-        <a href="/" class="hover:text-blue-600">Home</a>
-        <a href="/about" class="hover:text-blue-600">About</a>
-        <a href="/contact" class="hover:text-blue-600">Contact</a>
+        <a href="/" class="hover:text-[#E30613]">Home</a>
+        <a href="/about" class="hover:text-[#E30613]">About</a>
+        <a href="/contact" class="hover:text-[#E30613]">Contact</a>
       </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-4 py-8">
+    <main>
       <slot />
     </main>
 
-    <footer class="border-t mt-12">
-      <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-gray-500 flex flex-wrap gap-4 justify-between">
-        <p>&copy; 2026 Company Name. All rights reserved.</p>
-        <div class="flex gap-4">
-          <a href="/privacy" class="hover:text-blue-600">Privacy Policy</a>
-          <a href="/terms" class="hover:text-blue-600">Terms &amp; Conditions</a>
-        </div>
-      </div>
-    </footer>
+    <Footer />
 
     <script>
       document.getElementById('menu-btn').addEventListener('click', () => {
